@@ -4,12 +4,14 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-
+function randomNumberGenerator(number) {
+  return Math.floor(Math.random() * number);
+}
 function excuseGenerator() {
-  let who = ["The dog", "My grandma", "His turtle", "My bird"];
-  let action = ["ate", "peed", "crushed", "broke"];
-  let what = ["my homework", "the keys", "the car"];
-  let when = [
+  const who = ["The dog", "My grandma", "His turtle", "My bird"];
+  const action = ["ate", "peed", "crushed", "broke"];
+  const what = ["my homework", "the keys", "the car"];
+  const when = [
     "before the class",
     "right on time",
     "when I finished",
@@ -17,19 +19,20 @@ function excuseGenerator() {
     "while I was praying"
   ];
 
-  let whoRan = Math.floor(Math.random() * 4);
-  let actionRan = Math.floor(Math.random() * 4);
-  let whatRan = Math.floor(Math.random() * 3);
-  let whenRan = Math.floor(Math.random() * 5);
+  const whoIndex = randomNumberGenerator(who.length);
+  const actionIndex = randomNumberGenerator(action.length);
+  const whatIndex = randomNumberGenerator(what.length);
+  const whenIndex = randomNumberGenerator(when.length);
 
   let excuseGenerated =
-    who[whoRan] +
+    who[whoIndex] +
     " " +
-    action[actionRan] +
+    action[actionIndex] +
     " " +
-    what[whatRan] +
+    what[whatIndex] +
     " " +
-    when[whenRan];
+    when[whenIndex];
+
   return excuseGenerated;
 }
 window.onload = function() {
